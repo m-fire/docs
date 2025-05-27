@@ -1,14 +1,14 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: '개발'
+description: '로컬에서 변경 사항을 미리 보고 문서를 업데이트하세요.'
 ---
 
 <Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. <br />
-  Please upgrade to ```docs.json``` before proceeding and delete the legacy ```mint.json``` file.
+  **Prerequisite(전제 조건)**: 계속하기 전에 Node.js (버전 19 이상)를 설치하세요. <br />
+  계속하기 전에 ```docs.json```으로 업그레이드하고 기존 ```mint.json``` 파일을 삭제하세요.
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system:
+운영 체제에 Mintlify를 설치하고 실행하려면 다음 단계를 따르세요.
 
 **Step 1**: Install Mintlify:
 
@@ -24,23 +24,23 @@ yarn global add mintlify
 
 </CodeGroup>
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+**Step 2**: 문서 디렉토리(`docs.json` 파일이 있는 곳)로 이동하여 다음 명령을 실행합니다.
 
 ```bash
 mintlify dev
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+문서의 로컬 미리 보기는 `http://localhost:3000`에서 확인할 수 있습니다.
 
 ### Custom Ports
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+기본적으로 Mintlify는 포트 3000을 사용합니다. `--port` 플래그를 사용하여 Mintlify가 실행되는 포트를 사용자 지정할 수 있습니다. 예를 들어, 포트 3333에서 Mintlify를 실행하려면 다음 명령을 사용합니다.
 
 ```bash
 mintlify dev --port 3333
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+이미 사용 중인 포트에서 Mintlify를 실행하려고 하면 다음 사용 가능한 포트를 사용합니다:
 
 ```md
 Port 3000 is already in use. Trying 3001 instead.
@@ -48,7 +48,7 @@ Port 3000 is already in use. Trying 3001 instead.
 
 ## Mintlify Versions
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+각 CLI 릴리스는 특정 Mintlify 버전과 연결되어 있습니다. 로컬 웹사이트가 프로덕션 버전과 일치하지 않으면 CLI를 업데이트하세요:
 
 <CodeGroup>
 
@@ -62,22 +62,21 @@ yarn global upgrade mintlify
 
 </CodeGroup>
 
-## Validating Links
+## Validating Links(링크 유효성 검사)
 
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
+CLI는 문서에 있는 참조 링크의 유효성을 검사하는 데 도움을 줄 수 있습니다. 끊어진 링크를 식별하려면 다음 명령을 사용합니다:
 
 ```bash
 mintlify broken-links
 ```
 
-## Deployment
+## Deployment(배포)
 
 <Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
+  [Pro 플랜](https://mintlify.com/pricing) 이상에서 무제한 편집기를 사용할 수 있습니다.
 </Tip>
 
-If the deployment is successful, you should see the following:
+배포가 성공하면 다음을 볼 수 있습니다:
 
 <Frame>
   <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
@@ -85,23 +84,23 @@ If the deployment is successful, you should see the following:
 
 ## Code Formatting
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+MDX를 인식하고 형식을 지정하려면 IDE에서 확장을 사용하는 것이 좋습니다. VSCode 사용자라면 구문 강조를 위해 [MDX VSCode 확장](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)을, 코드 형식 지정을 위해 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)를 고려해 보세요.
 
-## Troubleshooting
+## Troubleshooting(문제해결)
 
 <AccordionGroup>
   <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
 
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
+    이는 노드 버전이 오래되었기 때문일 수 있습니다. 다음을 시도해 보세요.
+    1. 현재 설치된 mintlify 버전 제거: `npm remove -g mintlify`
+    2. Node v19 이상으로 업그레이드.
+    3. mintlify 재설치: `npm install -g mintlify`
   </Accordion>
 
   <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
+
+    해결 방법: 장치의 루트로 이동하여 ~/.mintlify 폴더를 삭제합니다. 그런 다음 `mintlify dev`를 다시 실행합니다.
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+CLI 버전에서 무엇이 변경되었는지 궁금하신가요? [CLI 변경 로그](https://www.npmjs.com/package/mintlify?activeTab=versions)를 확인하세요.

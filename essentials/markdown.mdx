@@ -1,12 +1,12 @@
 ---
-title: 'Markdown Syntax'
-description: 'Text, title, and styling in standard markdown'
+title: 'Markdown 문법'
+description: '표준 마크다운의 텍스트, 제목 및 스타일 지정'
 icon: 'text-size'
 ---
 
 ## Titles
 
-Best used for section headers.
+섹션 헤더에 가장 적합합니다.
 
 ```md
 ## Titles
@@ -14,7 +14,7 @@ Best used for section headers.
 
 ### Subtitles
 
-Best use to subsection headers.
+하위 섹션 헤더에 가장 적합합니다.
 
 ```md
 ### Subtitles
@@ -22,64 +22,62 @@ Best use to subsection headers.
 
 <Tip>
 
-Each **title** and **subtitle** creates an anchor and also shows up on the table of contents on the right.
+  각 **제목**과 **부제목**은 앵커를 생성하며 오른쪽 목차에도 표시됩니다.
 
 </Tip>
 
 ## Text Formatting
 
-We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+대부분의 마크다운 서식을 지원합니다. 텍스트 주위에 `**`, `_` 또는 `~`를 추가하여 서식을 지정하세요.
 
 | Style         | How to write it   | Result          |
-| ------------- | ----------------- | --------------- |
+|---------------|-------------------|-----------------|
 | Bold          | `**bold**`        | **bold**        |
 | Italic        | `_italic_`        | _italic_        |
 | Strikethrough | `~strikethrough~` | ~strikethrough~ |
 
-You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
+이것들을 조합할 수 있습니다. 예를 들어, `**_bold and italic_**`이라고 쓰면 **_bold and italic_** 텍스트를 얻을 수 있습니다.
 
-You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
+위 첨자 및 아래 첨자 텍스트를 작성하려면 HTML을 사용해야 합니다. 즉, 텍스트 주위에 `<sup>` 또는 `<sub>`를 추가해야 합니다.
 
 | Text Size   | How to write it          | Result                 |
-| ----------- | ------------------------ | ---------------------- |
+|-------------|--------------------------|------------------------|
 | Superscript | `<sup>superscript</sup>` | <sup>superscript</sup> |
 | Subscript   | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
 
-## Linking to Pages
+## Linking to Pages(페이지 연결)
 
-You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
+`[]()` 안에 텍스트를 넣어 링크를 추가할 수 있습니다. `[link to google](https://google.com)`이라고 작성하면 [link to google](https://google.com)로 연결됩니다.
 
-Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
+문서 내 페이지로 연결되는 링크는 루트를 기준으로 해야 합니다. 기본적으로 전체 폴더 경로를 포함해야 합니다. 예를 들어, `[link to text](/writing-content/text)`는 구성 요소 섹션의 "Text" 페이지로 연결됩니다.
 
-Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
+`[link to text](../text)`와 같은 상대 경로는 최적화하기 어려워 더 느리게 열립니다.
 
-## Blockquotes
+## Blockquotes(인용 블록)
 
 ### Singleline
 
-To create a blockquote, add a `>` in front of a paragraph.
+인용 블록을 만들려면 단락 앞에 `>`를 추가합니다.
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> 도로시는 성의 아름다운 방들을 따라 그녀를 따라갔습니다.
 
 ```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> 도로시는 성의 아름다운 방들을 따라 그녀를 따라갔습니다.
 ```
 
 ### Multiline
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> 도로시는 성의 아름다운 방들을 따라 그녀를 따라갔습니다. 마녀는 그녀에게 냄비와 주전자를 닦고, 바닥을 쓸고, 불에 나무를 계속 넣으라고 시켰습니다.
 
 ```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> 도로시는 성의 아름다운 방들을 따라 그녀를 따라갔습니다.
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> 마녀는 그녀에게 냄비와 주전자를 닦고, 바닥을 쓸고, 불에 나무를 계속 넣으라고 시켰습니다.
 ```
 
 ### LaTeX
 
-Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
+Mintlify는 Latex 구성 요소를 통해 [LaTeX](https://www.latex-project.org)를 지원합니다.
 
 <Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
 

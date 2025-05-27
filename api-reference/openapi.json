@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "OpenAPI 식물 상점",
+    "description": "OpenAPI 사양의 기능을 보여주기 위해 식물 상점을 예시로 사용하는 샘플 API",
     "license": {
       "name": "MIT"
     },
@@ -21,12 +21,12 @@
   "paths": {
     "/plants": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "사용자가 접근할 수 있는 시스템의 모든 식물을 반환합니다",
         "parameters": [
           {
             "name": "limit",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "반환할 최대 결과 수",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -35,7 +35,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "식물 응답",
             "content": {
               "application/json": {
                 "schema": {
@@ -48,7 +48,7 @@
             }
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "예기치 않은 오류",
             "content": {
               "application/json": {
                 "schema": {
@@ -60,9 +60,9 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "상점에 새 식물을 생성합니다",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "상점에 추가할 식물",
           "content": {
             "application/json": {
               "schema": {
@@ -74,7 +74,7 @@
         },
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "식물 응답",
             "content": {
               "application/json": {
                 "schema": {
@@ -84,7 +84,7 @@
             }
           },
           "400": {
-            "description": "unexpected error",
+            "description": "예기치 않은 오류",
             "content": {
               "application/json": {
                 "schema": {
@@ -98,12 +98,12 @@
     },
     "/plants/{id}": {
       "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+        "description": "제공된 ID를 기반으로 단일 식물을 삭제합니다",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of plant to delete",
+            "description": "삭제할 식물 ID",
             "required": true,
             "schema": {
               "type": "integer",
@@ -113,11 +113,11 @@
         ],
         "responses": {
           "204": {
-            "description": "Plant deleted",
+            "description": "식물 삭제됨",
             "content": {}
           },
           "400": {
-            "description": "unexpected error",
+            "description": "예기치 않은 오류",
             "content": {
               "application/json": {
                 "schema": {
@@ -133,9 +133,9 @@
   "webhooks": {
     "/plant/webhook": {
       "post": {
-        "description": "Information about a new plant added to the store",
+        "description": "상점에 추가된 새 식물에 대한 정보",
         "requestBody": {
-          "description": "Plant added to the store",
+          "description": "상점에 추가된 식물",
           "content": {
             "application/json": {
               "schema": {
@@ -146,7 +146,7 @@
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
+            "description": "데이터가 성공적으로 수신되었음을 나타내기 위해 200 상태를 반환합니다"
           }
         }
       }
@@ -161,11 +161,11 @@
         "type": "object",
         "properties": {
           "name": {
-            "description": "The name of the plant",
+            "description": "식물 이름",
             "type": "string"
           },
           "tag": {
-            "description": "Tag to specify the type",
+            "description": "유형을 지정하는 태그",
             "type": "string"
           }
         }
@@ -182,7 +182,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "description": "Identification number of the plant",
+                "description": "식별 번호",
                 "type": "integer",
                 "format": "int64"
               }

@@ -1,16 +1,16 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in docs.json defines the pages that go in the navigation menu'
+title: 'Navigation(탐색)'
+description: 'docs.json의 탐색 필드는 탐색 메뉴에 들어갈 페이지를 정의합니다.'
 icon: 'map'
 ---
 
-The navigation menu is the list of links on every website.
+탐색 메뉴는 모든 웹사이트에 있는 링크 목록입니다.
 
-You will likely update `docs.json` every time you add a new page. Pages do not show up automatically.
+새 페이지를 추가할 때마다 `docs.json`을 업데이트해야 할 것입니다. 페이지는 자동으로 표시되지 않습니다.
 
-## Navigation syntax
+## Navigation syntax(탐색 구문)
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
+저희 탐색 구문은 재귀적이므로 중첩된 탐색 그룹을 만들 수 있습니다. 페이지 이름에 `.mdx`를 포함할 필요는 없습니다.
 
 <CodeGroup>
 
@@ -56,32 +56,34 @@ Our navigation syntax is recursive which means you can make nested navigation gr
 
 ## Folders
 
-Simply put your MDX files in folders and update the paths in `docs.json`.
+MDX 파일을 폴더에 넣고 `docs.json`의 경로를 업데이트하기만 하면 됩니다.
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
+예를 들어, `https://yoursite.com/your-folder/your-page`에 페이지를 만들려면 `your-folder`라는 폴더를 만들고 그 안에 `your-page.mdx`라는 MDX 파일을 넣으면 됩니다.
 
 <Warning>
 
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
+다른 폴더 안에 중첩시키지 않는 한 `api`를 폴더 이름으로 사용할 수 없습니다. Mintlify는 Next.js를 사용하며, Next.js는 최상위 `api` 폴더를 내부 서버 호출용으로 예약합니다. `api-reference`와 같은 폴더 이름은 허용됩니다.
 
 </Warning>
 
 ```json Navigation With Folder
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Group Name",
-          "pages": ["your-folder/your-page"]
-        }
-      ]
-    }
-  ]
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Group Name",
+            "pages": ["your-folder/your-page"]
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
-## Hidden Pages
+## Hidden Pages(숨겨진 페이지)
 
-MDX files not included in `docs.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+`docs.json`에 포함되지 않은 MDX 파일은 사이드바에 표시되지 않지만, 검색창을 통해 또는 직접 링크하여 접근할 수 있습니다.
